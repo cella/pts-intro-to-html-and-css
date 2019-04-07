@@ -4,11 +4,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Intro to HTML/CSS</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/white.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
@@ -25,8 +25,714 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+					<script type="text/template">
+						# Intro to HTML/CSS
+						## Class 1
+
+						---
+
+						### Welcome to Philly Tech Sistas!
+						[TODO, notes about code of conduct, intro slides]
+
+						---
+
+						### Introduce yourself
+						Let’s get to know each other a little better.
+						- What’s your name? 
+						- What do you hope to get out of this class?
+						- What is your favorite or dream vacation destination?
+
+						---
+
+						### By the end of this class...
+						You will have created your portfolio website!
+						![alt text](img/example-site-screenshot.png "Screenshot of example site")
+
+						---
+
+						### What is HTML?
+						HTML stands for HyperText Markup Language
+
+						HTML is what we use to make websites. It tells web browsers how to display content (like text, images, links, and videos) on a webpage. 
+						
+						---
+
+						### The history of HTML
+						Tim Berners-Lee originally invented “hypertext” to share scientific papers.
+						- 1991 - First web page August 6, 1991
+						- 1994 - w3 Consortium formed (their goal is to standardize the web)
+						- 1997 - HTML 4
+						- 2000 - XHTML
+						- 2014 - HTML 5
+
+						---
+
+						![alt text](img/client-server-model.png "Illustration of the client server model")
+						How does the web actually work?
+
+						---
+
+						## Getting started
+						
+						<!-- .slide: class="style-section" -->
+
+						---
+
+						### Tools to get you started
+						1. Text editor
+						1. Browser
+						1. Developer tools
+
+						---
+
+						### 1. Text editor
+						A program that lets you enter and edit plain text. It can also be referred to as a “code editor”. Some examples are [Visual Studio Code](https://code.visualstudio.com), [Atom](https://atom.io), and [Sublime Text](https://www.sublimetext.com).
+
+						---
+						
+						We’ll be using Sublime Text in this class! 
+
+						You can download it [here.](https://www.sublimetext.com/)
+
+						![alt text](img/sublime-text-screenshot.jpg "Screenshot of the Sublime Text 2 text editor.")
+
+						---
+
+						### 2. Browser
+						Software for accessing webpages. The browser “talks” to a server and “asks” it for the webpage and content that you are trying to access.
+
+						![alt text](img/browser-logos.png "Logos of popular browsers.")
+
+						---
+
+						### 3. Developer Tools
+						All modern browsers give developers a toolkit to interact with the content on a page. You can do things like inspect loaded HTML, CSS and even see how long it took images to load.
+
+						![alt text](img/developer-tools.png "Chrome Developer Tools.")
+
+						--- 
+
+						## Demo
+						Let’s take a look at [Philly Tech Sistas](https://www.phillytechsistas.org) under the hood.
+
+						We can go to our browser and right-click anywhere. Selecting the “Inspect option from the dropdown list to see some code!
+
+						![alt text](img/pts-right-click.png "Screenshot of right-click on Philly Tech Sistas.")
+
+						---
+
+						### Exercise: Let’s start our project!
+						We’ll start by creating a folder that will house all of your files. Anything that will appear on your site will go in this folder, including HTML files, CSS files, and images.
+						
+						<!-- .slide: class="style-exercise" -->
+
+						--
+						
+						File names should not include spaces or special characters. They are also case sensitive. <!-- .element: class="small" -->
+
+						![alt text](img/site-files.png "An HTML site folder shown to contain an images folder, index.html and styles.css files.")
+
+						---
+						
+						## Structure of an HTML page
+
+						<!-- .slide: class="style-section" -->
+
+						---
+
+						### Doctype
+						The first thing on an HTML page is the doctype, which tells the browser which version of the markup language the page is using.
+
+						``` html
+						<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+						```
+
+						``` html
+						<!DOCTYPE html>
+						```
+
+						This is _not_ case sensitive. You could write DOCTYPE, doctype or doCTypE. <!-- .element: class="small" -->
+						
+						---
+
+						### Head
+						Contains the page title and meta information about the page. Meta information is invisible to the user, but has many purposes, like providing information to search engines.
+
+						---
+						
+						### Body
+						Contains the content of the page. Everything in the body is visible to the user.
+
+						---
+
+						### Example
+						``` html
+						<!DOCTYPE html>
+							<html>
+							  	<head>
+							    	<title>Title of the page</title>
+							  	</head>
+							  	<body>
+							    	The page content here.
+								</body>
+						</html>
+						```
+
+						---
+
+						### Nesting
+						All elements “nest” inside one another. Nesting occurs when elements are inside other containing tags. 
+
+						For example, you would put the <p>inside of the <body> tags. The <p> is now nested inside the <body>
+
+						``` html
+						<body>
+							<p>A paragraph inside the body tag</p>
+						</body>
+						```
+
+						---
+
+						### Exercise: Let’s set up our HTML
+						Open up your new project in SublimeText and we’ll make our first web page!
+
+						![alt text](img/empty-sublime.png "Sublime Text editor open to a blank page")
+						
+						<!-- .slide: class="style-exercise" -->
+
+						---
+						
+						## HTML tags
+
+						<!-- .slide: class="style-section" -->
+
+						---
+
+						### Anatomy of a tag
+
+						#### Opening and closing tags
+						Content must be contained within the opening tag and the closing tag.
+
+						``` html
+						<p>This is some content.</p>
+						```
+
+						#### Self-closing tags
+						Some elements don’t need to contain content! Images and break elements are examples of this.
+						
+						``` html
+						<img src="image.jpg" alt="Your image">
+						```
+
+						``` html
+						<br>
+						```
+
+						---
+
+						### Attributes
+						Attributes give more information about your element. Some are required for the element to work, such as the `src="img.jpg"` on the `<img>` tag. Some are optional.
+
+						![alt text](img/html-attributes.jpg "Screenshot highlighting attributes.")
+
+						---
+
+						### Values
+						Values allow us to make changes to our HTML attributes.
+
+						![alt text](img/html-values.png "Screenshot highlighting values in an image element.")
+
+						---
+						
+						## Elements
+
+						<!-- .slide: class="style-section" -->
+
+						---
+
+						### Headings
+						Heading number indicates hierarchy, not size. Think of outlines from high school papers.
+
+						``` html
+						<h1>Written</h1> 
+						<h2>In</h2> 
+						<h3>Decreasing</h3>
+						<h4>Order</h4>
+						<h5>Of</h5>
+						<h6>Importance</h6>
+						```
+
+						---
+
+						### Paragraphs
+						The browser doesn’t care about line breaks in your code, unless you contain your content in different paragraph tags.
+
+						``` html
+						<p>Cum sociis natoque  penatibus et magnis dis  parturient montes, nascet ridiculus mus.</p>
+						```
+
+						---
+
+						### Horizontal rule
+						This element represents a thematic break between paragraphs. You may use it to indicate that you are changing the subject within a section, for example.
+
+						``` html
+						<hr>
+						```
+
+						![alt text](img/html-horizontal-rule.png "Screenshot highlighting a horizontal rule")
+
+						---
+
+						### Exercise: Let’s add some content!
+						Introduce yourself on your website!
+
+						If you don’t know what to write, put in some [fun placeholder text!](https://loremipsum.io/ultimate-list-of-lorem-ipsum-generators/)
+
+						![alt text](img/example-site-screenshot.png)
+						
+						<!-- .slide: class="style-exercise" -->
+
+						---
+
+						### Link types
+						Links have attributes that different actions like open in a new tab, or launch your e-mail program.
+
+						1. Relative links
+						1. Absolute links
+						1. Anchor links
+
+						---
+
+						#### 1. Relative links
+						The file path is relative to the `index.html` page’s location. 
+
+						``` html
+						<a href="page.html">Link to a local page.</a>
+						```
+
+						---
+
+						#### 2. Absolute links
+						The file path has to include the full url (most commonly used for external site links).
+
+						``` html
+						<a href="http://google.com">Link to an external page.</a>
+						```
+
+						---
+
+						#### 3. Anchor links
+						You can tell the browser to go to a section on the page.
+
+						``` html
+						<a href="#projects">Link to a section on the page.</a>
+						```
+
+						---
+
+						### Link attributes
+						You can also add other attributes to links to complete different actions, like open in a new tab or launch an email program.
+
+						``` html
+						<a href="website.html" target="_blank">Opens in another tab.</a>
+						```
+
+						``` html
+						<a href="mailto:email@youremail.com">E-mail us!</a>
+						```
+
+						---
+
+						### Lists
+						Lists can be ordered or unordered. Unordered lists show up as generic bullet points, while ordered get numbers. You can change the style of both using CSS.
+
+						1. Ordered lists
+						2. Unordered lists
+
+						---
+
+						#### 1. Ordered list
+
+						``` html
+						<ol> 		
+							<li>Order</li> 		
+							<li>Matters</li>
+							<li>Here</li>
+						</ol>
+						```
+						
+						**Output**
+						1. Order
+						2. Matters
+						3. Here
+
+						---
+
+						#### 2. Unordered list
+
+						``` html
+						<ul> 		
+							<li>Order</li> 		
+							<li>Doesn’t</li>
+							<li>Matter</li>
+						</ul>
+						```
+						
+						**Output**
+						- Order
+						- Doesn’t
+						- Matter
+
+						---
+
+						### Exercise: Let’s add some content!
+						Let’s add an anchor navigation to our website together. Don’t worry about where the links will go to for now. Add the following"
+						1. About
+						1. Projects
+
+						``` html
+						<header>
+							<nav>
+								<ul>
+									<li>
+										<a href="#about">About</a>
+									</li>
+									<li>
+										<a href="#projects">About</a>
+									</li>
+								</ul>
+							</nav>
+						</header>
+						```
+
+						![alt text](img/example-site-screenshot.png)
+						
+						<!-- .slide: class="style-exercise" -->
+
+						---
+
+						### Image 
+						The image tag has two required attributes: `src` and `alt`. You can use a relative link or link to any image on the internet with an absolute link.
+
+						``` html
+						<img src="image.jpg" height="300px" width="200px">
+						```
+
+						``` html
+						<img src="https://www.website.com/image.jpg" height="300px" width="200px">
+						```
+
+						---
+
+						### Exercise: Let’s add some content!
+						Add your headshot to your website.
+
+						If you didn’t bring a headshot to class, don’t worry—you can use [this website](https://placekitten.com/) to generate one! <!-- .element: class="small" -->
+
+						![alt text](img/example-site-screenshot.png)
+						
+						<!-- .slide: class="style-exercise" -->
+
+						---
+
+						### Divider
+						The `<div>` tag is a _block-level_ division or section in an HTML document. It can contain anything, but has no meaning.
+
+						``` html
+						<div>
+							<p>Some content.</p>
+						</div>
+						```
+
+						---
+
+						### Span
+						The `<span>` tag is an _inline_ division in an HTML document. It can contain anything, but also has no meaning.
+
+						``` html
+						<p><span>Some</span> content.</p>
+						```
+
+						---
+
+						### Exercise: Let’s add some content!
+						We’re going to set up some placeholder projects. Start by adding 4 `<div>`’s to your website.
+
+						![alt text](img/example-site-screenshot.png)
+						
+						<!-- .slide: class="style-exercise" -->
+
+						---
+
+						### Comments
+						Annotations that can act as notes, commentary or explanations within your code. They show up in the browser, but don’t do anything.
+
+						``` html
+						<!-- HTML Comment! -->
+						```
+
+						``` html
+						<!-- <ul> 		
+							<li>Order</li> 		
+							<li>Doesn’t</li>
+							<li>Matter</li>
+						</ul> -->
+						```
+
+						---
+
+						### Tables
+						Tables are a way to represent complex information in a grid format. They are made up of rows and columns.
+
+						![alt text](img/html-basic-table.jpg)
+
+						---
+
+						#### Table code 
+
+
+						``` html
+						<table>
+							<caption>Title of your table</caption>
+							<tr>
+								<th>Column header</th>
+								<th>Column header</th>
+							</tr>
+							<tr>
+								<td>Data</td>
+								<td>Data</td>
+							</tr>
+						</table>
+						```
+
+						---
+
+						### Exercise: Let’s add some content!
+						We’re going to add a table that contains some skills that you have, and your comfort level in that skill from 1-5.
+
+						![alt text](img/example-site-screenshot.png)
+						
+						<!-- .slide: class="style-exercise" -->
+
+						---
+
+						## Break!
+						
+						<!-- .slide: class="style-break" -->
+
+						---
+
+						### What is CSS?
+						- Cascading Style Sheets
+						- CSS describes how HTML elements are to be styled
+						- Examples of how CSS is used: [CSS Zen Garden](http://www.csszengarden.com)
+
+						---
+
+						### How to include CSS
+						- Inline
+						- Internal stylesheet
+						- External stylesheet
+
+						---
+
+						### Inline
+						- The inline style is added as an HTML attribute
+						- Good for an individual CSS change that you do not use repeatedly throughout the site
+						- This is _not_ a recommended approach
+
+						``` html
+						<h1 style="font-size: 48px;">My headline</h1>
+						```
+
+						---
+
+						### Internal
+						- An internal stylesheet holds the CSS code for the webpage in the head section of the particular file
+						- Only affects the page the code is inserted into
+						- Not reuseable
+
+						``` html
+						<head>
+							<style>
+								body { background-color: blue; }
+								p { color: white; }
+							</style>
+						</head>
+						```
+
+						---
+
+						### External
+						- An external stylesheet is a standalone .css file that is linked from a web page.
+						- It can be created once and shared on multiple web pages
+						- Saves time and effort
+						- Easy to maintain
+						- Preferred approach
+
+						``` html
+						<head>
+							<link rel="stylesheet" type="text/css" href="style.css">
+						</head>
+						```
+
+						---
+
+						### Exercise
+						- Create a new CSS file called `style.css` inside your css folder
+						- Link to your css file inside your `index.html` file using the external stylesheet approach
+						
+						<!-- .slide: class="style-exercise" -->
+
+						---
+
+						## CSS syntax
+
+						<!-- .slide: class="style-section" -->
+
+						---
+
+						### CSS syntax
+						- **Selector:** points to the HTML element you want to style
+						- **Declaration:** includes a CSS property name and a value, separated by a colon
+						- **Declaration group:** is surrounded by curly brackets
+						- **Property:** indicates which stylistic features (e.g. font, width, background color) you want to change
+						- **Values:** Each property is given a value, which indicates how you want to change those stylistic features
+						
+						TODO: image with anatomy
+
+						---
+
+						### Selector
+						- Element selector
+						- Id selector
+						- Class selector
+						- Grouping selectors
+
+						---
+
+						### Element Selector
+						- The element selector selects elements based on the element name.
+						- The code below selects all `<p>` elements on a page and makes it center aligned and red
+
+						``` css
+						p {
+							text-align: center;
+							color: red;
+						}
+						```
+
+						---
+
+						### Id Selector
+						- The id selector uses the id attribute of an HTML element to select a specific element
+						- The id of an element should be unique within a page, so the id selector is used to select one element
+						- Use a hash (#) followed by the id of the element
+
+						``` css
+						#slideshow {
+							background: green;
+							border: 1px solid red;
+						}
+						```
+
+						---
+
+						### Class Selector
+						- The class selector selects elements with a specific class attribute
+						- Use a period (.) character, followed by the name of the class
+
+						``` css
+						.center {
+							text-align: center;
+						}
+						```
+
+						---
+
+						### Grouping selectors
+						If you want to have multiple elements with the same styles you can group the selectors like this:
+
+						``` css
+						h1, h2, p {
+							text-align: center;
+							color: red;
+						}
+						```
+
+						---
+
+						### Descendent selector
+						- Descendent selectors (or descendent combinator) allow you to combine two or more selectors so you can be more specific 
+						- Elements matched by the second selector are selected if they have an ancestor element matching the first selector.
+
+						``` css
+						ul li {
+							margin: 10px;
+						}
+						```
+
+						---
+
+						### Cascading
+						Styles “cascade” down until changed
+
+						``` css
+						p {
+							color: red;
+							font-weight: bold;
+							font-size: 18px;
+						}
+
+						.blue {
+							color: blue;
+						}
+						```
+
+						``` html
+						<p>I’m red, bold, and italic.</p>
+						<p class="blue">I’m all of those things, and also blue!</p>
+						```
+
+						---
+
+						### Cascading priority
+						1. Important!—most important
+						1. Inline CSS
+						1. ID
+						1. Class
+						1. Element—least important
+
+						``` css
+						.better {
+							background-color: gray;
+							border: none!important;
+						}
+
+						p {
+							background-color: blue;
+							color: white;
+							padding: 5px;
+						}
+						```
+
+						---
+
+						### Specificity
+						If two CSS selectors apply to the same element, the one with higher priority wins.
+
+						TODO: image with specifity hierarchy
+
+
+
+
+
+
+
+					</script>
+				</section>
 			</div>
 		</div>
 
@@ -37,6 +743,13 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				loop: true,
+				slideNumber: true,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
