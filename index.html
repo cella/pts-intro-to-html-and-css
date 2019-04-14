@@ -653,12 +653,11 @@
 						---
 
 						### CSS syntax
-						- **Selector:** points to the HTML element you want to style
-						- **Declaration:** includes a CSS property name and a value, separated by a colon
-						- **Declaration group:** is surrounded by curly brackets
+						- **Selector:** points to the HTML elements you want to style
 						- **Property:** indicates which stylistic features (e.g. font, width, background color) you want to change
 						- **Values:** Each property is given a value, which indicates how you want to change those stylistic features
-
+						- **Declaration:** includes a CSS property name and a value, separated by a colon
+						- **Declaration group:** is surrounded by curly brackets
 
 						---
 
@@ -677,7 +676,7 @@
 
 						### Element Selector
 						- The element selector selects elements based on the element name
-						- The code below selects all `<p>` elements on a page and makes it center aligned and red
+						- The code below selects all `<p>` elements on a page and makes them center aligned and red
 
 						``` css
 						p {
@@ -715,10 +714,10 @@
 						---
 
 						### Grouping selectors
-						If you want to have multiple elements with the same styles you can group the selectors like this:
+						If you want to have multiple elements with the same styles you can group the selectors with commas, like this:
 
 						``` css
-						h1, h2, p {
+						h1, .center-red, p {
 							text-align: center;
 							color: red;
 						}
@@ -729,6 +728,7 @@
 						### Descendent selector
 						- Descendent selectors (or descendent combinator) allow you to combine two or more selectors so you can be more specific
 						- Elements matched by the second selector are selected if they have an ancestor element matching the first selector
+						- This relationship is created with a space between selectors
 
 						``` css
 						ul li {
@@ -842,10 +842,14 @@
 						### color
 
 						- The color property is used to set the color of the text
-						- The color can be specified using:
-							- a color name - `red`
-							- a HEX value - `#ff0000`
-							- an RGB value - `rgb(255,0,0)`
+						- Colors in CSS can be specified using:
+							- a [color name](https://www.crockford.com/colors.html) - `red`
+							- a [HEX value](https://www.color-hex.com/) - `#ff0000`
+							- an RGB or RGBA value - `rgb(255,0,0)`
+
+						``` css
+						p { color: white;}
+						```
 
 						---
 
@@ -899,6 +903,7 @@
 						### font
 
 						- The `font` property is shorthand for `font-style`, `font-variant`, `font-weight`, `font-size`, `line-height`, and `font-family`.
+						- "shorthand" properties allow you to set multiple values with just one declaration
 
 						``` css
 						p {
@@ -1026,8 +1031,7 @@
 							border: 1px solid red;
 						}
 						```
-
-						![alt text](img/margin-auto.png)
+						<div style="width: 300px; margin: 0 auto; border: solid 1px red;">This will be automatically centered</div>
 
 						---
 
@@ -1047,7 +1051,7 @@
 						}
 						```
 
-						![alt text](img/border.png)
+						<p style="border: solid 5px red;">This property is a shorthand property for border-style, border-width, and border-color</p>
 
 
 						---
@@ -1072,6 +1076,10 @@
 						- The `display` property specifies if/how an element is displayed
 						- Every HTML element has a default display value depending on what type of element it is
 						- The default display value for most elements is block or inline
+
+						---
+
+						A quick review...
 
 						---
 
@@ -1244,7 +1252,7 @@
 
 						### Float
 
-						- The `float` property is used for positioning and formatting content
+						- The `float` property is used to allow other content to flow around an element. Think of a big letter at the beginning of a book chapter
 						- It can have the following values:
 							- left
 							- right
@@ -1269,7 +1277,7 @@
 
 						---
 
-						### Clear
+						### Float - Clear
 
 						- The `clear` property sets whether an element must be moved below the floating elements that precede it
 
