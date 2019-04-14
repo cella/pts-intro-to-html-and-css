@@ -104,6 +104,8 @@
 
 						![alt text](img/browser-logos.png "Logos of popular browsers.")
 
+						The instructions for this class were written for Chrome, but any browser will work similarly.
+
 						---
 
 						### 3. Developer Tools
@@ -157,34 +159,34 @@
 						---
 
 						### Head
-						Contains the page title and meta information about the page. Meta information is invisible to the user, but has many purposes, like providing information to search engines.
+						Contains the page title and meta information about the page. Meta information is mostly invisible to the user, but has many purposes, like providing information to search engines.
 
 						---
 
 						### Body
-						Contains the content of the page. Everything in the body is visible to the user.
+						Holds the visible content of the page. This is where you put anything you wish the user to see.
 
 						---
 
 						### Example
 						``` html
 						<!DOCTYPE html>
-							<html>
-							  	<head>
-							    	<title>Title of the page</title>
-							  	</head>
-							  	<body>
-							    	The page content here.
-								</body>
+						<html>
+							<head>
+								<title>Title of the page</title>
+							</head>
+							<body>
+								The page content here.
+							</body>
 						</html>
 						```
 
 						---
 
 						### Nesting
-						All elements “nest” inside one another. Nesting occurs when elements are inside other containing tags.
+						HTML is structured by nesting elements inside other elements. This is done by placing elements inside other containing tags.
 
-						For example, you would put the <p>inside of the <body> tags. The <p> is now nested inside the <body>
+						For example, you would put the `<p>`inside of the `<body>` tags. The `<p>` is now nested inside the `<body and is a "child" or a "descendent" of the body.
 
 						``` html
 						<body>
@@ -196,6 +198,10 @@
 
 						### Exercise: Let’s set up our HTML
 						Open up your new project in SublimeText and we’ll make our first web page!
+
+						1. Add the document type
+						1. Add an html element
+						1. Nest a head and body element next to each other, inside the html
 
 						![alt text](img/empty-sublime.png "Sublime Text editor open to a blank page")
 
@@ -212,7 +218,7 @@
 						### Anatomy of a tag
 
 						#### Opening and closing tags
-						Content must be contained within the opening tag and the closing tag.
+						Content must be contained within the opening tag and the closing tag. Note the `/` in the closing tag!
 
 						``` html
 						<p>This is some content.</p>
@@ -232,7 +238,7 @@
 						---
 
 						### Attributes
-						Attributes give more information about your element. Some are required for the element to work, such as the `src="img.jpg"` on the `<img>` tag. Some are optional.
+						Attributes give more information about your element. Some are required for the element to work, such as the `src` and `alt` on the `<img>` tag. Some are optional.
 
 						![alt text](img/html-attributes.jpg "Screenshot highlighting attributes.")
 
@@ -266,10 +272,18 @@
 						---
 
 						### Paragraphs
-						The browser doesn’t care about line breaks in your code, unless you contain your content in different paragraph tags.
+						The browser doesn’t care about line breaks or tabs in your code, and they will be ignored. Use a `<p>` tag to split lines of text in the displayed page.
+
+						These examples will render the same:
 
 						``` html
-						<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascet ridiculus mus.</p>
+						<p>Cum sociis natoque penatibus</p>
+
+						<p>
+							Cum
+							sociis
+							natoque penatibus
+						</p>
 						```
 
 						---
@@ -297,7 +311,7 @@
 						---
 
 						### Link types
-						Links have attributes that different actions like open in a new tab, or launch your e-mail program.
+						Links can take users to another page, another web site, or a specific part of a page.
 
 						1. Relative links
 						1. Absolute links
@@ -333,7 +347,7 @@
 						---
 
 						### Link attributes
-						You can also add other attributes to links to complete different actions, like open in a new tab or launch an email program.
+						With some adjustments, links can open in a new tab or perform a special action, like opening the user's default mail application.
 
 						``` html
 						<a href="website.html" target="_blank">Opens in another tab.</a>
