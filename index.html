@@ -738,8 +738,13 @@
 
 						---
 
+						### How is CSS applied?
+						There are a few rules that determine how styles are applied to your HTML. They all work together, and can combine in interesting and unexpected ways.
+
+						---
+
 						### Cascading
-						Styles “cascade” down until changed
+						Styles are read stop to bottom in the stylesheet, so the lowest style will "win."
 
 						``` css
 						p {
@@ -748,24 +753,58 @@
 							font-size: 18px;
 						}
 
-						.blue {
+						p {
 							color: blue;
 						}
 						```
 
 						``` html
-						<p>I’m red, 18px, and bold.</p>
-						<p class="blue">I’m all of those things, and also blue!</p>
+						<p>I’m blue, 18px, and bold.</p>
 						```
 
 						---
 
-						### Cascading priority
-						1. Important!—most important
+						### Inheritance
+						Some styles are passed from parents to children
+
+						``` css
+						p {
+							color: red;
+							font-weight: bold;
+							font-size: 18px;
+						}
+
+						span {
+							font-style: italic;
+						}
+						```
+
+						``` html
+						<p>
+							I’m red, 18px, and bold.
+							<span>I am those and also italic.</span>
+						</p>
+						```
+
+						---
+
+						### Specificity
+						How a style is specified makes a difference. Some ways are "stronger" than others.
+						1. `!important` — strongest
 						1. Inline CSS
 						1. ID
 						1. Class
-						1. Element—least important
+						1. Elements (& pseudo-elements)
+						1. Universal selector (`*`) — weakest
+
+						---
+
+						### Specificity
+						If two CSS selectors apply to the same element, the one with higher specificity wins. Under the hood, [there is a point system](https://medium.com/@frontendium/css-the-cascade-specificity-7f4ad354e58c).
+
+						![alt text](img/css-specificity-8-728.jpg)
+
+						---
 
 						``` css
 						.better {
@@ -777,15 +816,12 @@
 							background-color: blue;
 							color: white;
 							padding: 5px;
+							border: solid 1px white;
 						}
 						```
-
-						---
-
-						### Specificity
-						If two CSS selectors apply to the same element, the one with higher priority wins
-
-						![alt text](img/css-specificity-8-728.jpg)
+						``` html
+						<p class="better">Gray background, no border.</p>
+						```
 
 						---
 
