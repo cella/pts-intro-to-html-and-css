@@ -427,6 +427,11 @@
 
 						---
 
+						### Header and nav elements
+						You probably noticed the new elements we used for this exercise. The `header` element is meant to contain information relevant to the content below it, and the `nav` element should contain ways for the user to navigate. You can have multiples of these on a page.
+
+						---
+
 						### Image
 						The image tag has two required attributes: `src` and `alt`. You can use a relative link or link to any image on the internet with an absolute link.
 
@@ -451,8 +456,29 @@
 
 						---
 
+						### Block vs. Inline Elements
+						So far, we've seen some elements that will appear on their own line in the page, and some that can appear next to other elements. Those are called "block-level" and "inline" elements, respectively.
+
+						- **Block:** headings, paragraphs, lists
+						- **Inline:** links, images
+
+						---
+
+						### Choosing which element to use
+						Each element has two main aspects that make it different from another element.
+
+						1. How a browser will display it by default. Developers can manipulate this with styles.
+						2. What browsers and search engines will assume about the content of that element. This is called the "semantic" value of an element.
+
+						---
+
+						### Semantics
+						Search engines and screen-readers understand that the content of a heading is meant to be more important than the content of a paragraph, and they will expect to find something useful in a nav element. They will treat links differently from images, which are different from text. Choosing the right element matters.
+
+						---
+
 						### Divider
-						The `<div>` tag is a _block-level_ division or section in an HTML document. It can contain anything, but has no meaning.
+						The `<div>` tag is a _block-level_ division or section in an HTML document. It can contain anything, but has no semantic value.
 
 						``` html
 						<div>
@@ -463,11 +489,16 @@
 						---
 
 						### Span
-						The `<span>` tag is an _inline_ division in an HTML document. It can contain anything, but also has no meaning.
+						The `<span>` tag is an _inline_ division in an HTML document. It can contain any non-block content, but also has no semantic value.
 
 						``` html
 						<p><span>Some</span> content.</p>
 						```
+
+						---
+
+						### Non-semantic elements
+						`div` and `span` are called non-semantic elements. They don't add any information for non-human readers. But they're great when you only need to add styles!
 
 						---
 
@@ -529,6 +560,19 @@
 						![alt text](img/example-site-screenshot.png)
 
 						<!-- .slide: class="style-exercise" -->
+
+						---
+
+						### Other elements of interest
+						We've covered the basics to get you started, but there are many more elements available, some of which are very semantically useful:
+
+						- section
+						- article
+						- footer
+						- em
+						- strong
+
+						Check out a [complete list](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) for more info.
 
 						---
 
