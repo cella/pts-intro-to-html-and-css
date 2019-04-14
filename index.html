@@ -1207,6 +1207,11 @@
 
 						---
 
+						### Other display values
+						Display has many other supported values in modern browsers, but aside from `flex`, which we'll discuss later, block, inline, inline-block, and none, are the main ones.
+
+						---
+
 						### Exercise
 
 						- Create a new unordered list with 4 list elements
@@ -1313,6 +1318,15 @@
 
 						---
 
+						### CSS layout features
+						In addition to being able to position individual elements in the "flow" of the page, there are also a few other layout features in modern CSS.
+
+						- Float
+						- Flex or "flexbox"
+						- CSS grid
+
+						---
+
 						### Float
 
 						- The `float` property is used to allow other content to flow around an element. Think of a big letter at the beginning of a book chapter
@@ -1368,15 +1382,51 @@
 
 						---
 
+						### Flex
+						Setting `display: flex;` will create a container whose children can be "flexed".
+						``` css
+						div {
+							display: flex;
+							align-items: stretch;
+							justify-content: space-around;
+						}
+						.flexed {
+							width: 20%;
+							background-color: #bf79db;
+						}
+						```
+						``` html
+						<div>
+							<p class="flexed"></p>
+							<p class="flexed"></p>
+							<p class="flexed"></p>
+							<p class="flexed"></p>
+						</div>
+						```
 
 						---
 
+						<div style="display: flex; justify-content: space-between; align-items: stretch; flex-wrap: wrap;">
+							<div style="background: #bf79db; width: 20%;">&nbsp;</div>
+							<div style="background: #bf79db; width: 20%;">&nbsp;</div>
+							<div style="background: #bf79db; width: 20%;">&nbsp;</div>
+							<div style="background: #bf79db; width: 20%;">&nbsp;</div>
+						</div>
 
+						We won't use this today, but you can [read more](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) about this newer, powerful layout feature of CSS.
+
+						---
+
+						### CSS Grid
+						Grid is a newer layout feature that doesn't work in all older browsers. It's similar to tables but much easier to use and with more flexible options. [Learn more here](https://dev.to/karaluton/introduction-to-css-grid-what-you-should-know-52np).
+
+						![CSS grid](img/css-grid.png)
 
 						---
 
 						### Exercise
 
+						- Use any remaining time to add structure to your portfolio page
 
 						<!-- .slide: class="style-exercise" -->
 
