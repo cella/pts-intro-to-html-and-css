@@ -104,6 +104,8 @@
 
 						![alt text](img/browser-logos.png "Logos of popular browsers.")
 
+						The instructions for this class were written for Chrome, but any browser will work similarly.
+
 						---
 
 						### 3. Developer Tools
@@ -157,34 +159,34 @@
 						---
 
 						### Head
-						Contains the page title and meta information about the page. Meta information is invisible to the user, but has many purposes, like providing information to search engines.
+						Contains the page title and meta information about the page. Meta information is mostly invisible to the user, but has many purposes, like providing information to search engines.
 
 						---
 
 						### Body
-						Contains the content of the page. Everything in the body is visible to the user.
+						Holds the visible content of the page. This is where you put anything you wish the user to see.
 
 						---
 
 						### Example
 						``` html
 						<!DOCTYPE html>
-							<html>
-							  	<head>
-							    	<title>Title of the page</title>
-							  	</head>
-							  	<body>
-							    	The page content here.
-								</body>
+						<html>
+							<head>
+								<title>Title of the page</title>
+							</head>
+							<body>
+								The page content here.
+							</body>
 						</html>
 						```
 
 						---
 
 						### Nesting
-						All elements “nest” inside one another. Nesting occurs when elements are inside other containing tags.
+						HTML is structured by nesting elements inside other elements. This is done by placing elements inside other containing tags.
 
-						For example, you would put the <p>inside of the <body> tags. The <p> is now nested inside the <body>
+						For example, you would put the `<p>`inside of the `<body>` tags. The `<p>` is now nested inside the `<body and is a "child" or a "descendent" of the body.
 
 						``` html
 						<body>
@@ -196,6 +198,10 @@
 
 						### Exercise: Let’s set up our HTML
 						Open up your new project in SublimeText and we’ll make our first web page!
+
+						1. Add the document type
+						1. Add an html element
+						1. Nest a head and body element next to each other, inside the html
 
 						![alt text](img/empty-sublime.png "Sublime Text editor open to a blank page")
 
@@ -212,7 +218,7 @@
 						### Anatomy of a tag
 
 						#### Opening and closing tags
-						Content must be contained within the opening tag and the closing tag.
+						Content must be contained within the opening tag and the closing tag. Note the `/` in the closing tag!
 
 						``` html
 						<p>This is some content.</p>
@@ -232,7 +238,7 @@
 						---
 
 						### Attributes
-						Attributes give more information about your element. Some are required for the element to work, such as the `src="img.jpg"` on the `<img>` tag. Some are optional.
+						Attributes give more information about your element. Some are required for the element to work, such as the `src` and `alt` on the `<img>` tag. Some are optional.
 
 						![alt text](img/html-attributes.jpg "Screenshot highlighting attributes.")
 
@@ -266,10 +272,18 @@
 						---
 
 						### Paragraphs
-						The browser doesn’t care about line breaks in your code, unless you contain your content in different paragraph tags.
+						The browser doesn’t care about line breaks or tabs in your code, and they will be ignored. Use a `<p>` tag to split lines of text in the displayed page.
+
+						These examples will render the same:
 
 						``` html
-						<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascet ridiculus mus.</p>
+						<p>Cum sociis natoque penatibus</p>
+
+						<p>
+							Cum
+							sociis
+							natoque penatibus
+						</p>
 						```
 
 						---
@@ -297,7 +311,7 @@
 						---
 
 						### Link types
-						Links have attributes that different actions like open in a new tab, or launch your e-mail program.
+						Links can take users to another page, another web site, or a specific part of a page.
 
 						1. Relative links
 						1. Absolute links
@@ -333,7 +347,7 @@
 						---
 
 						### Link attributes
-						You can also add other attributes to links to complete different actions, like open in a new tab or launch an email program.
+						With some adjustments, links can open in a new tab or perform a special action, like opening the user's default mail application.
 
 						``` html
 						<a href="website.html" target="_blank">Opens in another tab.</a>
@@ -413,6 +427,11 @@
 
 						---
 
+						### Header and nav elements
+						You probably noticed the new elements we used for this exercise. The `header` element is meant to contain information relevant to the content below it, and the `nav` element should contain ways for the user to navigate. You can have multiples of these on a page.
+
+						---
+
 						### Image
 						The image tag has two required attributes: `src` and `alt`. You can use a relative link or link to any image on the internet with an absolute link.
 
@@ -437,8 +456,29 @@
 
 						---
 
+						### Block vs. Inline Elements
+						So far, we've seen some elements that will appear on their own line in the page, and some that can appear next to other elements. Those are called "block-level" and "inline" elements, respectively.
+
+						- **Block:** headings, paragraphs, lists
+						- **Inline:** links, images
+
+						---
+
+						### Choosing which element to use
+						Each element has two main aspects that make it different from another element.
+
+						1. How a browser will display it by default. Developers can manipulate this with styles.
+						2. What browsers and search engines will assume about the content of that element. This is called the "semantic" value of an element.
+
+						---
+
+						### Semantics
+						Search engines and screen-readers understand that the content of a heading is meant to be more important than the content of a paragraph, and they will expect to find something useful in a nav element. They will treat links differently from images, which are different from text. Choosing the right element matters.
+
+						---
+
 						### Divider
-						The `<div>` tag is a _block-level_ division or section in an HTML document. It can contain anything, but has no meaning.
+						The `<div>` tag is a _block-level_ division or section in an HTML document. It can contain anything, but has no semantic value.
 
 						``` html
 						<div>
@@ -449,11 +489,16 @@
 						---
 
 						### Span
-						The `<span>` tag is an _inline_ division in an HTML document. It can contain anything, but also has no meaning.
+						The `<span>` tag is an _inline_ division in an HTML document. It can contain any non-block content, but also has no semantic value.
 
 						``` html
 						<p><span>Some</span> content.</p>
 						```
+
+						---
+
+						### Non-semantic elements
+						`div` and `span` are called non-semantic elements. They don't add any information for non-human readers. But they're great when you only need to add styles!
 
 						---
 
@@ -515,6 +560,19 @@
 						![alt text](img/example-site-screenshot.png)
 
 						<!-- .slide: class="style-exercise" -->
+
+						---
+
+						### Other elements of interest
+						We've covered the basics to get you started, but there are many more elements available, some of which are very semantically useful:
+
+						- section
+						- article
+						- footer
+						- em
+						- strong
+
+						Check out a [complete list](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) for more info.
 
 						---
 
@@ -595,12 +653,11 @@
 						---
 
 						### CSS syntax
-						- **Selector:** points to the HTML element you want to style
-						- **Declaration:** includes a CSS property name and a value, separated by a colon
-						- **Declaration group:** is surrounded by curly brackets
+						- **Selector:** points to the HTML elements you want to style
 						- **Property:** indicates which stylistic features (e.g. font, width, background color) you want to change
 						- **Values:** Each property is given a value, which indicates how you want to change those stylistic features
-
+						- **Declaration:** includes a CSS property name and a value, separated by a colon
+						- **Declaration group:** is surrounded by curly brackets
 
 						---
 
@@ -619,7 +676,7 @@
 
 						### Element Selector
 						- The element selector selects elements based on the element name
-						- The code below selects all `<p>` elements on a page and makes it center aligned and red
+						- The code below selects all `<p>` elements on a page and makes them center aligned and red
 
 						``` css
 						p {
@@ -657,10 +714,10 @@
 						---
 
 						### Grouping selectors
-						If you want to have multiple elements with the same styles you can group the selectors like this:
+						If you want to have multiple elements with the same styles you can group the selectors with commas, like this:
 
 						``` css
-						h1, h2, p {
+						h1, .center-red, p {
 							text-align: center;
 							color: red;
 						}
@@ -671,6 +728,7 @@
 						### Descendent selector
 						- Descendent selectors (or descendent combinator) allow you to combine two or more selectors so you can be more specific
 						- Elements matched by the second selector are selected if they have an ancestor element matching the first selector
+						- This relationship is created with a space between selectors
 
 						``` css
 						ul li {
@@ -680,8 +738,13 @@
 
 						---
 
+						### How is CSS applied?
+						There are a few rules that determine how styles are applied to your HTML. They all work together, and can combine in interesting and unexpected ways.
+
+						---
+
 						### Cascading
-						Styles “cascade” down until changed
+						Styles are read stop to bottom in the stylesheet, so the lowest style will "win."
 
 						``` css
 						p {
@@ -690,24 +753,58 @@
 							font-size: 18px;
 						}
 
-						.blue {
+						p {
 							color: blue;
 						}
 						```
 
 						``` html
-						<p>I’m red, 18px, and bold.</p>
-						<p class="blue">I’m all of those things, and also blue!</p>
+						<p>I’m blue, 18px, and bold.</p>
 						```
 
 						---
 
-						### Cascading priority
-						1. Important!—most important
+						### Inheritance
+						Some styles are passed from parents to children
+
+						``` css
+						p {
+							color: red;
+							font-weight: bold;
+							font-size: 18px;
+						}
+
+						span {
+							font-style: italic;
+						}
+						```
+
+						``` html
+						<p>
+							I’m red, 18px, and bold.
+							<span>I am those and also italic.</span>
+						</p>
+						```
+
+						---
+
+						### Specificity
+						How a style is specified makes a difference. Some ways are "stronger" than others.
+						1. `!important` — strongest
 						1. Inline CSS
 						1. ID
 						1. Class
-						1. Element—least important
+						1. Elements (& pseudo-elements)
+						1. Universal selector (`*`) — weakest
+
+						---
+
+						### Specificity
+						If two CSS selectors apply to the same element, the one with higher specificity wins. Under the hood, [there is a point system](https://medium.com/@frontendium/css-the-cascade-specificity-7f4ad354e58c).
+
+						![alt text](img/css-specificity-8-728.jpg)
+
+						---
 
 						``` css
 						.better {
@@ -719,15 +816,12 @@
 							background-color: blue;
 							color: white;
 							padding: 5px;
+							border: solid 1px white;
 						}
 						```
-
-						---
-
-						### Specificity
-						If two CSS selectors apply to the same element, the one with higher priority wins
-
-						![alt text](img/css-specificity-8-728.jpg)
+						``` html
+						<p class="better">Gray background, no border.</p>
+						```
 
 						---
 
@@ -784,10 +878,14 @@
 						### color
 
 						- The color property is used to set the color of the text
-						- The color can be specified using:
-							- a color name - `red`
-							- a HEX value - `#ff0000`
-							- an RGB value - `rgb(255,0,0)`
+						- Colors in CSS can be specified using:
+							- a [color name](https://www.crockford.com/colors.html) - `red`
+							- a [HEX value](https://www.color-hex.com/) - `#ff0000`
+							- an RGB or RGBA value - `rgb(255,0,0)`
+
+						``` css
+						p { color: white;}
+						```
 
 						---
 
@@ -841,6 +939,7 @@
 						### font
 
 						- The `font` property is shorthand for `font-style`, `font-variant`, `font-weight`, `font-size`, `line-height`, and `font-family`.
+						- "shorthand" properties allow you to set multiple values with just one declaration
 
 						``` css
 						p {
@@ -892,6 +991,33 @@
 							- https://www.w3schools.com/csSref/css_websafe_fonts.asp
 						- Change the font color and/or background color to various elements on your page
 						- Try using `font`, `font-family`, `font-size` and `text-align` on your page
+
+						<!-- .slide: class="style-exercise" -->
+
+						---
+
+						### Pseudo-classes
+						Some elements can be targeted with special "pseudo" classes that often deal with a temporary state of being. Links are one example we'll explore.
+
+						---
+
+						### Link styles
+
+						- The four links states are:
+							- `a:link` - a normal, unvisited link
+							- `a:visited` - a link the user has visited
+							- `a:hover` - a link when the user mouses over it
+							- `a:active` - a link the moment it is clicked
+						- Each state is known as a pseudo-class
+
+						---
+
+						### Exercise
+
+						- Using your color palette
+							- Set a color to your default link styles
+							- Set another color of your link’s hover state
+						- Apply a hover state to your projects so that your captions appears on hover
 
 						<!-- .slide: class="style-exercise" -->
 
@@ -968,8 +1094,7 @@
 							border: 1px solid red;
 						}
 						```
-
-						![alt text](img/margin-auto.png)
+						<div style="width: 300px; margin: 0 auto; border: solid 1px red;">This will be automatically centered</div>
 
 						---
 
@@ -989,7 +1114,7 @@
 						}
 						```
 
-						![alt text](img/border.png)
+						<p style="border: solid 5px red;">This property is a shorthand property for border-style, border-width, and border-color</p>
 
 
 						---
@@ -1014,6 +1139,10 @@
 						- The `display` property specifies if/how an element is displayed
 						- Every HTML element has a default display value depending on what type of element it is
 						- The default display value for most elements is block or inline
+
+						---
+
+						A quick review...
 
 						---
 
@@ -1075,6 +1204,11 @@
 						- The top and bottom margins/paddings are respected
 
 						![alt text](img/inline-block.png)
+
+						---
+
+						### Other display values
+						Display has many other supported values in modern browsers, but aside from `flex`, which we'll discuss later, block, inline, inline-block, and none, are the main ones.
 
 						---
 
@@ -1184,9 +1318,18 @@
 
 						---
 
+						### CSS layout features
+						In addition to being able to position individual elements in the "flow" of the page, there are also a few other layout features in modern CSS.
+
+						- Float
+						- Flex or "flexbox"
+						- CSS grid
+
+						---
+
 						### Float
 
-						- The `float` property is used for positioning and formatting content
+						- The `float` property is used to allow other content to flow around an element. Think of a big letter at the beginning of a book chapter
 						- It can have the following values:
 							- left
 							- right
@@ -1211,7 +1354,7 @@
 
 						---
 
-						### Clear
+						### Float - Clear
 
 						- The `clear` property sets whether an element must be moved below the floating elements that precede it
 
@@ -1239,27 +1382,51 @@
 
 						---
 
-						### Pseudo-classes
+						### Flex
+						Setting `display: flex;` will create a container whose children can be "flexed".
+						``` css
+						div {
+							display: flex;
+							align-items: stretch;
+							justify-content: space-around;
+						}
+						.flexed {
+							width: 20%;
+							background-color: #bf79db;
+						}
+						```
+						``` html
+						<div>
+							<p class="flexed"></p>
+							<p class="flexed"></p>
+							<p class="flexed"></p>
+							<p class="flexed"></p>
+						</div>
+						```
 
 						---
 
-						### Link styles
+						<div style="display: flex; justify-content: space-between; align-items: stretch; flex-wrap: wrap;">
+							<div style="background: #bf79db; width: 20%;">&nbsp;</div>
+							<div style="background: #bf79db; width: 20%;">&nbsp;</div>
+							<div style="background: #bf79db; width: 20%;">&nbsp;</div>
+							<div style="background: #bf79db; width: 20%;">&nbsp;</div>
+						</div>
 
-						- The four links states are:
-							- `a:link` - a normal, unvisited link
-							- `a:visited` - a link the user has visited
-							- `a:hover` - a link when the user mouses over it
-							- `a:active` - a link the moment it is clicked
-						- Each state is known as a pseudo-class
+						We won't use this today, but you can [read more](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) about this newer, powerful layout feature of CSS.
+
+						---
+
+						### CSS Grid
+						Grid is a newer layout feature that doesn't work in all older browsers. It's similar to tables but much easier to use and with more flexible options. [Learn more here](https://dev.to/karaluton/introduction-to-css-grid-what-you-should-know-52np).
+
+						![CSS grid](img/css-grid.png)
 
 						---
 
 						### Exercise
 
-						- Using your color palette
-							- Set a color to your default link styles
-							- Set another color of your link’s hover state
-						- Apply a hover state to your projects so that your captions appears on hover
+						- Use any remaining time to add structure to your portfolio page
 
 						<!-- .slide: class="style-exercise" -->
 
