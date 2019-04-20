@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/white.css">
+		<link rel="stylesheet" href="css/theme/custom.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
@@ -104,7 +104,7 @@
 
 						![alt text](img/browser-logos.png "Logos of popular browsers.")
 
-						The instructions for this class were written for Chrome, but any browser will work similarly.
+						The instructions for this class were written for Chrome, but any browser will work similarly. <!-- .element: class="small" -->
 
 						---
 
@@ -154,7 +154,8 @@
 						<!DOCTYPE html>
 						```
 
-						This is _not_ case sensitive. You could write DOCTYPE, doctype or doCTypE. <!-- .element: class="small" -->
+						This is _not_ case sensitive. You could write DOCTYPE, doctype or doCTypE. 
+						<!-- .element: class="small" -->
 
 						---
 
@@ -186,7 +187,7 @@
 						### Nesting
 						HTML is structured by nesting elements inside other elements. This is done by placing elements inside other containing tags.
 
-						For example, you would put the `<p>`inside of the `<body>` tags. The `<p>` is now nested inside the `<body and is a "child" or a "descendent" of the body.
+						For example, the `<p>` nested inside of the `<body>` tags is a “child” or a “descendent” of the body.
 
 						``` html
 						<body>
@@ -202,8 +203,6 @@
 						1. Add the document type
 						1. Add an html element
 						1. Nest a head and body element next to each other, inside the html
-
-						![alt text](img/empty-sublime.png "Sublime Text editor open to a blank page")
 
 						<!-- .slide: class="style-exercise" -->
 
@@ -347,7 +346,7 @@
 						---
 
 						### Link attributes
-						With some adjustments, links can open in a new tab or perform a special action, like opening the user's default mail application.
+						With some adjustments, links can open in a new tab or perform a special action, like opening the user’s default mail application.
 
 						``` html
 						<a href="website.html" target="_blank">Opens in another tab.</a>
@@ -402,7 +401,7 @@
 						---
 
 						### Exercise: Let’s add some content!
-						Let’s add an anchor navigation to our website together. Don’t worry about where the links will go to for now. Add the following"
+						Let’s add an anchor navigation to our website. Don’t worry about where the links will go to for now. Add:
 						1. About
 						1. Projects
 
@@ -428,7 +427,13 @@
 						---
 
 						### Header and nav elements
-						You probably noticed the new elements we used for this exercise. The `header` element is meant to contain information relevant to the content below it, and the `nav` element should contain ways for the user to navigate. You can have multiples of these on a page.
+						You may have noticed some new elements!
+						
+						#### `<header>`
+						The header element contains information relevant to the content below it.
+
+						#### `<nav>`
+						This element contains navigation for your website.
 
 						---
 
@@ -448,7 +453,8 @@
 						### Exercise: Let’s add some content!
 						Add your headshot to your website.
 
-						If you didn’t bring a headshot to class, don’t worry—you can use [this website](https://placekitten.com/) to generate one! <!-- .element: class="small" -->
+						If you didn’t bring a headshot to class, you can use [this website](https://placekitten.com/) to generate one! 
+						<!-- .element: class="small" -->
 
 						![alt text](img/example-site-screenshot.png)
 
@@ -467,13 +473,8 @@
 						### Choosing which element to use
 						Each element has two main aspects that make it different from another element.
 
-						1. How a browser will display it by default. Developers can manipulate this with styles.
-						2. What browsers and search engines will assume about the content of that element. This is called the "semantic" value of an element.
-
-						---
-
-						### Semantics
-						Search engines and screen-readers understand that the content of a heading is meant to be more important than the content of a paragraph, and they will expect to find something useful in a nav element. They will treat links differently from images, which are different from text. Choosing the right element matters.
+						1. How a browser will display it by default.
+						2. What browsers and search engines will assume about the content of that element. This is called the “semantic” value of an element.
 
 						---
 
@@ -498,7 +499,7 @@
 						---
 
 						### Non-semantic elements
-						`div` and `span` are called non-semantic elements. They don't add any information for non-human readers. But they're great when you only need to add styles!
+						`div` and `span` are called non-semantic elements. They don’t add any information for non-human readers. But they’re great when you only need to add styles!
 
 						---
 
@@ -564,15 +565,16 @@
 						---
 
 						### Other elements of interest
-						We've covered the basics to get you started, but there are many more elements available, some of which are very semantically useful:
+						We’ve covered the basics to get you started, but there are many more elements available, some of which are very semantically useful:
 
-						- section
-						- article
-						- footer
-						- em
-						- strong
+						- `<section>`
+						- `<article>`
+						- `<footer>`
+						- `<em>`
+						- `<strong>`
 
 						Check out a [complete list](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) for more info.
+						<!-- .element: class="small" -->
 
 						---
 
@@ -744,7 +746,7 @@
 						---
 
 						### Cascading
-						Styles are read stop to bottom in the stylesheet, so the lowest style will "win."
+						Styles are read from top to bottom in the stylesheet, so the lowest style will “win.”
 
 						``` css
 						p {
@@ -789,7 +791,7 @@
 						---
 
 						### Specificity
-						How a style is specified makes a difference. Some ways are "stronger" than others.
+						How a style is specified makes a difference. Some ways are “stronger” than others.
 						1. `!important` — strongest
 						1. Inline CSS
 						1. ID
@@ -939,7 +941,7 @@
 						### font
 
 						- The `font` property is shorthand for `font-style`, `font-variant`, `font-weight`, `font-size`, `line-height`, and `font-family`.
-						- "shorthand" properties allow you to set multiple values with just one declaration
+						- “shorthand” properties allow you to set multiple values with just one declaration
 
 						``` css
 						p {
@@ -997,7 +999,7 @@
 						---
 
 						### Pseudo-classes
-						Some elements can be targeted with special "pseudo" classes that often deal with a temporary state of being. Links are one example we'll explore.
+						Some elements can be targeted with special “pseudo” classes that often deal with a temporary state of being. Links are one example we’ll explore.
 
 						---
 
@@ -1208,7 +1210,7 @@
 						---
 
 						### Other display values
-						Display has many other supported values in modern browsers, but aside from `flex`, which we'll discuss later, block, inline, inline-block, and none, are the main ones.
+						Display has many other supported values in modern browsers, but aside from `flex`, which we’ll discuss later, block, inline, inline-block, and none, are the main ones.
 
 						---
 
@@ -1319,10 +1321,10 @@
 						---
 
 						### CSS layout features
-						In addition to being able to position individual elements in the "flow" of the page, there are also a few other layout features in modern CSS.
+						In addition to being able to position individual elements in the “flow” of the page, there are also a few other layout features in modern CSS.
 
 						- Float
-						- Flex or "flexbox"
+						- Flex or “flexbox”
 						- CSS grid
 
 						---
@@ -1379,48 +1381,6 @@
 						![alt text](img/float-exercise.png)
 
 						<!-- .slide: class="style-exercise" -->
-
-						---
-
-						### Flex
-						Setting `display: flex;` will create a container whose children can be "flexed".
-						``` css
-						div {
-							display: flex;
-							align-items: stretch;
-							justify-content: space-around;
-						}
-						.flexed {
-							width: 20%;
-							background-color: #bf79db;
-						}
-						```
-						``` html
-						<div>
-							<p class="flexed"></p>
-							<p class="flexed"></p>
-							<p class="flexed"></p>
-							<p class="flexed"></p>
-						</div>
-						```
-
-						---
-
-						<div style="display: flex; justify-content: space-between; align-items: stretch; flex-wrap: wrap;">
-							<div style="background: #bf79db; width: 20%;">&nbsp;</div>
-							<div style="background: #bf79db; width: 20%;">&nbsp;</div>
-							<div style="background: #bf79db; width: 20%;">&nbsp;</div>
-							<div style="background: #bf79db; width: 20%;">&nbsp;</div>
-						</div>
-
-						We won't use this today, but you can [read more](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) about this newer, powerful layout feature of CSS.
-
-						---
-
-						### CSS Grid
-						Grid is a newer layout feature that doesn't work in all older browsers. It's similar to tables but much easier to use and with more flexible options. [Learn more here](https://dev.to/karaluton/introduction-to-css-grid-what-you-should-know-52np).
-
-						![CSS grid](img/css-grid.png)
 
 						---
 
